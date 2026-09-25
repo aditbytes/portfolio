@@ -1,0 +1,38 @@
+{
+  "name": "aditya-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Personal engineering portfolio of Aditya \u2014 AI/ML, quant research and data systems.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr --emptyOutDir && node scripts/prerender.mjs",
+    "preview": "vite preview",
+    "typecheck": "tsc -b",
+    "images": "node scripts/optimize-images.mjs",
+    "cf:dev": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "cf:typegen": "wrangler types"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource-variable/space-grotesk": "^5.3.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260925.1",
+    "@types/node": "^26.6.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "sharp": "^0.35.4",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1",
+    "wrangler": "^4.140.0"
+  }
+}

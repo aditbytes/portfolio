@@ -1,0 +1,131 @@
+.notes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.note {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 24px 22px 40px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-lg);
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 31px, rgba(255, 255, 255, 0.035) 31px 32px),
+    linear-gradient(180deg, var(--surface-1), var(--bg-1));
+  overflow: hidden;
+  transition:
+    border-color 0.4s,
+    transform 0.6s var(--ease-out);
+}
+.note::before {
+  /* notebook margin */
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 24px;
+  width: 1px;
+  background: rgba(255, 107, 53, 0.35);
+}
+.note:hover {
+  border-color: var(--line-3);
+  transform: translateY(-4px);
+}
+.note__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.note__head .label:last-child {
+  text-align: right;
+  font-size: 10.5px;
+}
+.note__title {
+  margin-top: 26px;
+  font-size: clamp(26px, 2.3vw, 34px);
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+.note__q {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+  font-family: var(--f-display);
+  font-size: 18px;
+  line-height: 1.35;
+  font-style: italic;
+  color: var(--text);
+}
+.note__q .label {
+  font-style: normal;
+}
+.note__fields {
+  display: grid;
+  gap: 14px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--line-2);
+}
+.note__fields dt {
+  margin-bottom: 4px;
+  font-size: 10.5px;
+}
+.note__fields dd {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--text-2);
+}
+.note__finding {
+  display: grid;
+  gap: 8px;
+  margin-top: 22px;
+  padding: 14px 16px;
+  border-left: 2px solid var(--lime);
+  background: var(--lime-dim);
+  border-radius: 0 10px 10px 0;
+}
+.note__finding .label {
+  color: var(--lime);
+}
+.note__finding p {
+  font-size: 14.5px;
+  color: var(--text);
+}
+.note__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 24px;
+}
+.note__formula {
+  font-family: var(--f-mono);
+  font-size: 12.5px;
+  color: var(--text-3);
+}
+.note__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-block: 10px;
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lime);
+}
+.note__link svg {
+  width: 14px;
+  height: 14px;
+}
+
+@media (max-width: 1100px) {
+  .notes {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+  }
+}

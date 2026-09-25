@@ -1,0 +1,4 @@
+# Runtime secrets for `wrangler dev` (copy to .dev.vars — it is gitignored).
+# Optional. A fine-grained GitHub token with no scopes (public data only)
+# raises the GitHub API rate limit for /api/github from 60 to 5000 req/h.
+GITHUB_TOKEN=

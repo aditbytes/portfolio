@@ -1,0 +1,26 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Cloudflare Workers + Static Assets.
+  // Build with `npm run build` (outputs ./dist), deploy with `npx wrangler deploy`.
+  "name": "aditya-portfolio",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-09-24",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    // Unknown paths (e.g. /work/demandiq on a hard refresh) get index.html;
+    // the client router takes it from there.
+    "not_found_handling": "single-page-application",
+    // Only /api/* runs the Worker first; every other request is served
+    // straight from the asset store without invoking the Worker.
+    "run_worker_first": ["/api/*"]
+  },
+  "vars": {
+    "GITHUB_USER": "aditbytes"
+  },
+  "observability": {
+    "enabled": true
+  }
+  // Custom domain (optional) — see README › Custom Domain:
+  // "routes": [{ "pattern": "example.com", "custom_domain": true }]
+}

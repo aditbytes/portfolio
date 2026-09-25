@@ -1,0 +1,31 @@
+.portrait-fallback {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  background:
+    repeating-linear-gradient(45deg, transparent 0 10px, rgba(255, 255, 255, 0.02) 10px 11px),
+    var(--surface-1);
+}
+.notfound {
+  display: grid;
+  gap: 24px;
+  justify-items: start;
+  min-height: 80vh;
+  align-content: center;
+  padding-top: var(--nav-h);
+}
+.notfound h1 {
+  font-size: clamp(64px, 14vw, 200px);
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+}
+.notfound__dot {
+  color: var(--lime);
+}
+.notfound p {
+  color: var(--text-2);
+}
+main:focus {
+  outline: none;
+}
