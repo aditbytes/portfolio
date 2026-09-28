@@ -1,0 +1,47 @@
+:root {
+  /* Surfaces */
+  --bg-0: #050505;
+  --bg-1: #08090b;
+  --bg-2: #0d0e12;
+  --surface-1: #111318;
+  --surface-2: #15171d;
+  --surface-3: #1b1d24;
+
+  /* Accents — lime is reserved for state, CTAs and data indicators */
+  --lime: #b7ff00;
+  --lime-dim: rgba(183, 255, 0, 0.14);
+  --violet: #7c3cff;
+  --violet-soft: #9d6bff;
+  --cyan: #21d4fd;
+  --warm: #ff6b35;
+
+  /* Text */
+  --text: #f5f5f5;
+  --text-2: #a1a1aa;
+  --text-3: #8b8b94; /* muted, nudged up from #71717A to keep 4.5:1 on --bg-0 */
+  --text-4: #5f5f68; /* decorative only */
+
+  /* Lines */
+  --line: rgba(255, 255, 255, 0.08);
+  --line-2: rgba(255, 255, 255, 0.14);
+  --line-3: rgba(255, 255, 255, 0.24);
+
+  /* Type */
+  --f-display: 'Space Grotesk Variable', 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --f-body: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* Layout */
+  --gutter: clamp(16px, 4vw, 48px);
+  --max: 1440px;
+  --nav-h: 76px;
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur: 0.7s;
+
+  color-scheme: dark;
+}

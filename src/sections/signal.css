@@ -1,0 +1,192 @@
+.signal__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 96px);
+  align-items: end;
+  margin-top: clamp(32px, 5vw, 64px);
+}
+.signal__title {
+  font-size: clamp(44px, 7.6vw, 124px);
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.signal__row {
+  display: block;
+}
+.signal__lime {
+  color: var(--lime);
+}
+
+.messy {
+  display: inline-block;
+  color: var(--text-3);
+  white-space: nowrap;
+  transition: color 1.2s var(--ease-out) 0.3s;
+}
+.messy > span {
+  display: inline-block;
+  transform: translate3d(var(--x), var(--y), 0) rotate(var(--r));
+  transition: transform 1.3s var(--ease-out);
+  transition-delay: calc(var(--i) * 45ms + 150ms);
+}
+.messy > span {
+  color: var(--text-3);
+  transition-property: transform, color;
+}
+.signal__title.is-in .messy > span {
+  color: color-mix(in oklab, var(--cyan), var(--violet-soft) calc(var(--i) * 11%));
+}
+.signal__title.is-in .messy > span {
+  transform: none;
+}
+@media (hover: hover) {
+  .signal__title.is-in:hover .messy > span {
+    transform: translate3d(calc(var(--x) * 0.35), calc(var(--y) * 0.35), 0) rotate(calc(var(--r) * 0.35));
+    transition-duration: 0.5s;
+    transition-delay: calc(var(--i) * 18ms);
+  }
+}
+
+.signal__body {
+  max-width: 58ch;
+  margin-top: clamp(28px, 3vw, 44px);
+  font-size: clamp(16.5px, 1.3vw, 19px);
+  color: var(--text-2);
+}
+
+.signal__figure figure {
+  position: relative;
+}
+.signal__frame {
+  overflow: hidden;
+  border-radius: 22px 22px 180px 22px;
+  background: #0b0b0c;
+  box-shadow: 0 0 0 1px var(--line);
+}
+.signal__frame img {
+  width: 100%;
+  height: auto;
+  filter: contrast(1.08) brightness(0.95);
+  transition: transform 1.4s var(--ease-out);
+}
+.signal__frame:hover img {
+  transform: scale(1.04);
+}
+.signal__figure figcaption {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+  font-size: 11px;
+}
+.signal__scribble {
+  position: absolute;
+  left: -28%;
+  top: 14%;
+  width: 46%;
+  fill: none;
+  stroke: var(--lime);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+  transition: stroke-dashoffset 1.6s var(--ease-out) 0.6s;
+}
+.is-in .signal__scribble {
+  stroke-dashoffset: 0;
+}
+
+/* ---------- Keyword index ---------- */
+.keywords {
+  margin-top: clamp(64px, 9vw, 128px);
+  border-top: 1px solid var(--line);
+}
+.keyword {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1.4fr) minmax(0, 1.3fr) minmax(0, 0.8fr);
+  align-items: center;
+  gap: 24px;
+  padding: clamp(18px, 2.2vw, 28px) 0;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.keyword::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, var(--lime-dim), transparent 70%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s var(--ease-out);
+}
+.keyword__word {
+  font-family: var(--f-display);
+  font-size: clamp(28px, 3.8vw, 56px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  transition:
+    transform 0.6s var(--ease-out),
+    color 0.3s;
+}
+.keyword__note {
+  color: var(--text-3);
+  font-size: 15px;
+  transition: color 0.3s;
+}
+.keyword__tag {
+  justify-self: end;
+  text-align: right;
+  font-size: 10.5px;
+  transition: color 0.3s;
+}
+.keyword__num {
+  transition: color 0.3s;
+}
+@media (hover: hover) {
+  .keyword:hover::before {
+    transform: scaleX(1);
+  }
+  .keyword:hover .keyword__word {
+    transform: translateX(14px);
+  }
+  .keyword:hover .keyword__note {
+    color: var(--text);
+  }
+  .keyword:hover .keyword__num,
+  .keyword:hover .keyword__tag {
+    color: var(--lime);
+  }
+}
+
+@media (max-width: 900px) {
+  .signal__grid {
+    grid-template-columns: 1fr;
+  }
+  .signal__figure {
+    max-width: 420px;
+    margin-left: auto;
+  }
+  .signal__scribble {
+    left: -22%;
+    width: 38%;
+  }
+  .keyword {
+    grid-template-columns: 40px 1fr;
+    gap: 6px 12px;
+  }
+  .keyword__note,
+  .keyword__tag {
+    grid-column: 2;
+    justify-self: start;
+    text-align: left;
+  }
+  .keyword__note {
+    color: var(--text-2);
+    font-size: 14.5px;
+  }
+}

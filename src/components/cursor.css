@@ -1,0 +1,92 @@
+html.has-cursor.cursor-on,
+html.has-cursor.cursor-on * {
+  cursor: none !important;
+}
+html.has-cursor.cursor-on :is(input[type='text'], input[type='search'], textarea) {
+  cursor: text !important;
+}
+.cursor {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+html.cursor-on .cursor {
+  opacity: 1;
+}
+.cursor__dot,
+.cursor__ring {
+  position: absolute;
+  left: 0;
+  top: 0;
+  will-change: transform;
+}
+.cursor__dot {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: var(--lime);
+}
+.cursor__ring {
+  display: grid;
+  place-items: center;
+  width: 0;
+  height: 0;
+}
+.cursor__ring::before {
+  content: '';
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(245, 245, 245, 0.45);
+  transform: translate(0, 0);
+  transition:
+    width 0.35s var(--ease-out),
+    height 0.35s var(--ease-out),
+    background 0.35s,
+    border-color 0.35s;
+}
+.cursor__ring span {
+  position: absolute;
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #050505;
+  opacity: 0;
+  transform: scale(0.6);
+  transition:
+    opacity 0.25s,
+    transform 0.35s var(--ease-out);
+}
+.cursor__ring[data-state='link']::before {
+  width: 56px;
+  height: 56px;
+  border-color: var(--lime);
+  background: rgba(183, 255, 0, 0.08);
+}
+.cursor__ring[data-state='view']::before {
+  width: 84px;
+  height: 84px;
+  border-color: var(--lime);
+  background: var(--lime);
+}
+.cursor__ring[data-state='view'] span {
+  opacity: 1;
+  transform: none;
+}
+.cursor__ring[data-state='text']::before {
+  width: 2px;
+  height: 22px;
+  border-radius: 1px;
+  border-color: var(--lime);
+}
+.cursor__ring.is-down::before {
+  width: 24px;
+  height: 24px;
+}
