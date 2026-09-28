@@ -91,6 +91,10 @@ Wrangler prints the live URL, e.g. `https://aditya-portfolio.<your-subdomain>.wo
 4. Under **Settings → Build → Variables**, add `SITE_URL` (see below) once you know the final URL.
 5. Save. Every push to the production branch now builds and deploys, and pull requests get preview URLs.
 
+### Also on Vercel
+
+The repository is also connected to Vercel, which builds `npm run build` into `dist/`. `vercel.json` makes case-study URLs (`/work/<slug>`) and the 404 fallback work there too. Vercel doesn't run the Worker or apply `public/_headers`, so `/api/github` isn't available, and the GitHub section falls back to the public GitHub API. Cloudflare remains the intended production host.
+
 ## Environment Variables
 
 Nothing sensitive is ever shipped to the browser. There are only two optional variables:
