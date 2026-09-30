@@ -166,7 +166,7 @@ export function Hero() {
           <div>
             <dt className="label">Now</dt>
             <dd>
-              Building <Link href="/work/indieye" className="u-link">IndiEye</Link>
+              Building <Link href="/work/indra" className="u-link">INDRA</Link> · SIH 2026
             </dd>
           </div>
           <div>

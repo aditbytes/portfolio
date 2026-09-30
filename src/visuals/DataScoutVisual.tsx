@@ -96,7 +96,7 @@ function Body({ inView }: { inView: boolean }) {
 export function DataScoutVisual() {
   return (
     <VisualFrame
-      file="datascout · agent session · fig.04"
+      file="datascout · agent session · fig.05"
       note="Illustrative session"
       label="An agent session: a plain-English question, generated pandas code running in a sandbox with IAM, encryption, audit log and sandbox checks, and a bar-chart answer"
     >

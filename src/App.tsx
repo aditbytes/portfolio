@@ -10,6 +10,7 @@ import { Code } from './sections/Code';
 import { Contact, Footer } from './sections/Contact';
 import { Experience } from './sections/Experience';
 import { Hero } from './sections/Hero';
+import { Now } from './sections/Now';
 import { Research } from './sections/Research';
 import { Signal } from './sections/Signal';
 import { Stack } from './sections/Stack';
@@ -30,11 +31,12 @@ function Home() {
       <Marker step="02 → 03" text="Model loaded" />
       <SystemMap />
       <Experience />
+      <Now />
       <Research />
       <Stack />
       <About />
       <Code />
-      <Marker step="08 → 09" text="System ready" />
+      <Marker step="09 → 10" text="System ready" />
       <Contact />
     </>
   );

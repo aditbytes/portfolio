@@ -219,13 +219,22 @@
   font-size: clamp(56px, 9vw, 150px);
   letter-spacing: -0.06em;
 }
-.project--flagship .project__top::before {
-  content: 'Flagship';
-  order: -1;
+.project__badge {
   padding: 4px 10px;
   border-radius: 999px;
   background: var(--violet);
   color: var(--text);
+}
+.project[data-accent='lime'] .project__badge {
+  background: var(--lime);
+  color: #050505;
+}
+.project--flagship[data-accent='lime'] {
+  background:
+    radial-gradient(80% 60% at 0% 0%, rgba(183, 255, 0, 0.1), transparent 60%),
+    radial-gradient(60% 50% at 100% 100%, rgba(33, 212, 253, 0.08), transparent 60%),
+    var(--bg-1);
+  border-color: rgba(183, 255, 0, 0.24);
 }
 .project--flagship .project__line,
 .project--flagship .project__flow,
@@ -291,5 +300,79 @@
   }
   .project__metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- More builds ---------- */
+.more {
+  margin-top: clamp(80px, 10vw, 140px);
+}
+.more__list {
+  margin-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.more__list > li {
+  border-bottom: 1px solid var(--line);
+}
+.more__row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 8px 32px;
+  padding: 22px 0;
+  transition: padding 0.4s var(--ease-out);
+}
+.more__name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--f-display);
+  font-size: clamp(20px, 1.8vw, 26px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+.more__name svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  color: var(--text-3);
+  transition:
+    transform 0.3s var(--ease-out),
+    color 0.3s;
+}
+.more__desc {
+  font-size: 14.5px;
+  color: var(--text-2);
+}
+.more__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+.more__tags span {
+  padding: 3px 9px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--text-3);
+}
+@media (hover: hover) {
+  .more__row:hover {
+    padding-left: 14px;
+  }
+  .more__row:hover .more__name svg {
+    color: var(--lime);
+    transform: translate(2px, -2px);
+  }
+}
+@media (max-width: 900px) {
+  .more__row {
+    grid-template-columns: 1fr;
+  }
+  .more__tags {
+    justify-content: flex-start;
   }
 }

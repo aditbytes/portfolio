@@ -853,3 +853,320 @@
     display: none;
   }
 }
+
+/* ---------- INDRA ---------- */
+.indra {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 14px;
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  color: var(--text-2);
+}
+.indra__map {
+  width: 100%;
+  height: auto;
+}
+.indra__grid {
+  stroke: var(--line);
+  stroke-width: 0.6;
+}
+.indra__hull {
+  stroke-width: 1.2;
+  stroke-dasharray: 4 3;
+  opacity: 0;
+  transition: opacity 0.8s var(--ease-out) 1.1s;
+}
+.is-in .indra__hull {
+  opacity: 1;
+}
+.indra__hull--flood {
+  fill: rgba(33, 212, 253, 0.1);
+  stroke: var(--cyan);
+}
+.indra__hull--heat {
+  fill: rgba(255, 107, 53, 0.1);
+  stroke: var(--warm);
+}
+.indra__pt {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0.2);
+  transition:
+    opacity 0.5s,
+    transform 0.6s var(--ease-out);
+  transition-delay: calc(var(--i) * 35ms);
+}
+.is-in .indra__pt {
+  opacity: 1;
+  transform: none;
+}
+.indra__pt--flood {
+  fill: var(--cyan);
+}
+.indra__pt--heat {
+  fill: var(--warm);
+}
+.indra__pt--noise {
+  fill: var(--text-4);
+}
+.indra__metar rect {
+  fill: none;
+  stroke: var(--lime);
+  stroke-width: 1.2;
+}
+.indra__metar text,
+.indra__tag {
+  font-size: 9.5px !important;
+  letter-spacing: 0.1em;
+}
+.indra__metar text {
+  fill: var(--lime) !important;
+}
+.indra__tag--flood {
+  fill: var(--cyan) !important;
+}
+.indra__tag--heat {
+  fill: var(--warm) !important;
+}
+.indra__key {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-4);
+}
+.indra__key--flood {
+  background: var(--cyan);
+}
+.indra__key--heat {
+  background: var(--warm);
+}
+.indra__rows {
+  display: grid;
+  gap: 7px;
+}
+.indra__rows li {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) 52px;
+  align-items: center;
+  gap: 10px;
+}
+.indra__factor {
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.indra__factor em {
+  font-style: normal;
+  color: var(--text-3);
+  margin-left: 4px;
+}
+.indra__bar {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--surface-3);
+  overflow: hidden;
+}
+.indra__bar span {
+  display: block;
+  height: 100%;
+  background: var(--lime);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.9s var(--ease-out);
+  transition-delay: calc(var(--i) * 90ms + 300ms);
+}
+.is-in .indra__bar span {
+  transform: scaleX(var(--w));
+}
+.indra__bar span.is-zero {
+  width: 6px;
+  background: var(--warm);
+  transform: none;
+}
+.indra__rows li.is-off .indra__bar {
+  background: repeating-linear-gradient(90deg, var(--surface-3) 0 4px, transparent 4px 7px);
+}
+.indra__score {
+  text-align: right;
+  color: var(--text);
+}
+.indra__rows li.is-off .indra__factor,
+.indra__rows li.is-off .indra__score {
+  color: var(--text-4);
+}
+.indra__total {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px 12px;
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line-2);
+  color: var(--text-3);
+}
+.indra__total b {
+  color: var(--lime);
+  font-weight: 500;
+}
+.indra__verdict {
+  flex-wrap: wrap;
+}
+.indra__chip {
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.indra__chip--warm {
+  color: var(--warm);
+  background: rgba(255, 107, 53, 0.14);
+}
+.indra__arrow {
+  color: var(--text-3);
+}
+.indra__why {
+  margin-left: auto;
+  color: var(--text-3);
+  font-size: 10.5px;
+}
+.indra .ie__insight {
+  grid-column: 1 / -1;
+}
+
+/* ---------- Sanjivani ---------- */
+.sj__grid {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  gap: 2px;
+  padding: 6px;
+  border-radius: 10px;
+  background: #0f1a12;
+}
+.sj__grid span {
+  aspect-ratio: 1;
+  border-radius: 1.5px;
+  background: rgba(118, 150, 92, 0.28);
+  transition: background 0.5s;
+  transition-delay: var(--d);
+}
+.is-in .sj__grid span.is-water {
+  background: rgba(33, 212, 253, 0.75);
+}
+.sj__bars .ds__bar-track span {
+  transform: scaleX(0);
+}
+.is-in .sj__bars .ds__bar-track span {
+  transform: scaleX(var(--v));
+}
+.sj__bars .ds__bar.is-top .ds__bar-track span {
+  background: var(--cyan);
+}
+.sj__bars .ds__bar {
+  grid-template-columns: 64px 1fr;
+}
+
+/* ---------- Agentic core ---------- */
+.ag .ds__rail li.is-on {
+  background: var(--violet-soft);
+}
+.ag .ds__msg--user {
+  border-color: rgba(157, 107, 255, 0.4);
+}
+.ag .ds__msg--user .ds__who {
+  color: var(--violet-soft);
+}
+.ag__plan {
+  display: grid;
+  gap: 6px;
+  margin-top: 8px;
+}
+.ag__plan li {
+  display: grid;
+  grid-template-columns: 16px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  color: var(--text-3);
+  transition: color 0.3s;
+}
+.ag__plan li.is-run,
+.ag__plan li.is-done {
+  color: var(--text);
+}
+.ag__plan li.is-done .ag__mark {
+  color: var(--lime);
+}
+.ag__plan li.is-run .ag__mark {
+  color: var(--violet-soft);
+}
+.ag__plan code {
+  padding: 1px 7px;
+  border-radius: 5px;
+  background: var(--bg-0);
+  color: var(--cyan);
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+}
+.ag__eval {
+  font-family: var(--f-mono) !important;
+  font-size: 12px !important;
+}
+.ag__mem {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.ag__mem.is-on {
+  opacity: 1;
+}
+.ag__mem span {
+  padding: 2px 8px;
+  border: 1px solid var(--line-2);
+  border-radius: 6px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-2);
+}
+
+@media (max-width: 900px) {
+  .indra {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .indra__why,
+  .indra__formula {
+    display: none;
+  }
+  .indra__rows li {
+    grid-template-columns: minmax(0, 1fr) 56px 44px;
+    gap: 8px;
+  }
+  .indra__factor em {
+    display: none;
+  }
+  .indra__metar text,
+  .indra__tag {
+    font-size: 12px !important;
+  }
+}
+.indra__formula {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--bg-0);
+  font-family: var(--f-mono);
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--text-3);
+  overflow-x: auto;
+}

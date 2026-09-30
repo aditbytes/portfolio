@@ -83,3 +83,18 @@
     grid-template-columns: 1fr;
   }
 }
+.stack__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: -14px 0 18px;
+  color: var(--lime);
+  font-size: 10.5px;
+}
+.stack__status .dot {
+  width: 6px;
+  height: 6px;
+}
+.stack__group.is-learning .stack__items li {
+  border-style: dashed;
+}

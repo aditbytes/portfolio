@@ -5,7 +5,7 @@ import { site } from '../content/site';
 import { Link } from '../lib/router';
 import './about.css';
 
-const INTERESTS = ['AI / ML', 'Quantitative Research', 'Data Infrastructure', 'Cloud Systems', 'Applied Research'];
+const INTERESTS = ['AI / ML', 'Quantitative Research', 'Data Infrastructure', 'MLOps', 'Inference Engineering', 'Cloud Systems', 'Applied Research'];
 
 export function About() {
   return (
@@ -29,7 +29,7 @@ export function About() {
               <li style={{ '--i': 2 } as CSSProperties}>{site.education.period}</li>
             </ul>
             <figcaption className="label">
-              <span>Fig. 07</span>
+              <span>Fig. 08</span>
               <span>Identity</span>
             </figcaption>
           </figure>
@@ -37,7 +37,7 @@ export function About() {
 
         <div className="about__copy">
           <Reveal className="section-head__meta label">
-            <span className="section-head__index">[07]</span>
+            <span className="section-head__index">[08]</span>
             <span>About</span>
           </Reveal>
           <h2 className="about__title" id="about-title">
@@ -63,8 +63,9 @@ export function About() {
             <p>
               I care about the unglamorous parts: features that don’t leak the future, evaluation that matches how a
               model will actually be used, and interfaces that let someone act on the output. Right now that means
-              building <Link href="/work/indieye" className="u-link about__link">IndiEye</Link>, an open research
-              platform for market intelligence.
+              building the backend of <Link href="/work/indra" className="u-link about__link">INDRA</Link>, a
+              disaster-intelligence platform for Smart India Hackathon 2026, while going deeper into inference engineering
+              and MLOps.
             </p>
           </Reveal>
 

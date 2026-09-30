@@ -2,6 +2,7 @@ import type { CSSProperties, MouseEvent } from 'react';
 import { ArrowRight, ArrowUpRight, Lock } from '../components/Icons';
 import { Reveal } from '../components/Reveal';
 import { SectionHead } from '../components/SectionHead';
+import { moreBuilds } from '../content/profile';
 import { projects, type Project } from '../content/projects';
 import { Link, navigate } from '../lib/router';
 import { projectVisuals } from '../visuals';
@@ -45,6 +46,7 @@ function ProjectRow({ project, flip }: { project: Project; flip: boolean }) {
     >
       <Reveal className="project__info">
         <div className="project__top label">
+          {project.flagship && project.badge && <span className="project__badge">{project.badge}</span>}
           <span className="project__num">
             <b>{project.index}</b> / {String(projects.length).padStart(2, '0')}
           </span>
@@ -106,7 +108,7 @@ export function Work() {
           label="Selected Work"
           id="work-title"
           title={['Selected', <span className="outline" key="w">work</span>]}
-          lede="Five systems across quant research, ML platforms, agentic AI and interpretability. Each one is a pipeline, not a notebook — click through for the case study."
+          lede="Eight systems across data platforms, quant research, ML platforms, agentic AI and interpretability. Each one is a pipeline, not a notebook — click through for the case study."
         />
         <div className="work__list">
           {projects.map((p) => {
@@ -114,6 +116,32 @@ export function Work() {
             if (!p.flagship) flip = !flip;
             return row;
           })}
+        </div>
+
+        <div className="more">
+          <Reveal className="section-head__meta label">
+            <span className="section-head__index" id="more-title">
+              More builds
+            </span>
+            <span>{String(moreBuilds.length).padStart(2, '0')}</span>
+          </Reveal>
+          <ul className="more__list">
+            {moreBuilds.map((b, i) => (
+              <Reveal as="li" key={b.name} i={i}>
+                <a className="more__row" href={b.href} target="_blank" rel="noopener noreferrer">
+                  <span className="more__name">
+                    {b.name} <ArrowUpRight />
+                  </span>
+                  <span className="more__desc">{b.description}</span>
+                  <span className="more__tags">
+                    {b.tags.map((t) => (
+                      <span key={t}>{t}</span>
+                    ))}
+                  </span>
+                </a>
+              </Reveal>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

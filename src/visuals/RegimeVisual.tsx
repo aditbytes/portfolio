@@ -72,7 +72,7 @@ export function RegimeVisual() {
   const hr = hover === null ? null : REGIMES[series[hover].regime];
 
   return (
-    <VisualFrame file="regime_detector · fig.01" label="Price series with coloured bands for low-volatility, trending and crisis regimes, and the strategy each regime selects">
+    <VisualFrame file="regime_detector · fig.02" label="Price series with coloured bands for low-volatility, trending and crisis regimes, and the strategy each regime selects">
       {(inView) => (
         <svg className={`regime ${inView ? 'is-drawn' : ''}`} viewBox={`0 0 ${W} 360`} onPointerMove={onMove} onPointerLeave={() => setHover(null)}>
           <defs>

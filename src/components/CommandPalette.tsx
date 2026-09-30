@@ -31,6 +31,7 @@ export default function CommandPalette({ open, onClose }: { open: boolean; onClo
     const list: Cmd[] = [
       { name: '/work', hint: 'Selected work', run: go('/#work') },
       { name: '/about', hint: 'About me', run: go('/#about') },
+      { name: '/now', hint: 'What I’m building & learning', run: go('/#now') },
       { name: '/research', hint: 'Research notes', run: go('/#research') },
       { name: '/system', hint: 'System map', run: go('/#systems') },
       { name: '/stack', hint: 'Toolchain', run: go('/#stack') },
