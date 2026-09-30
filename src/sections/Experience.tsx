@@ -45,7 +45,7 @@ export function Experience() {
         <SectionHead index="04" label="Experience" id="exp-title" title={['Where I’ve', <span className="outline" key="b">built</span>]} />
 
         <ol className="timeline" ref={lineRef}>
-          {experience.map((e, i) => (
+          {experience.map((e) => (
             <li className="timeline__item" key={e.org}>
               <Reveal className="timeline__when">
                 <span className="timeline__year">{e.year}</span>
@@ -65,7 +65,7 @@ export function Experience() {
                 </ul>
                 <ul className="timeline__tags" aria-label="Focus areas">
                   {e.tags.map((t) => (
-                    <li key={t} className={i === 1 ? 'is-quant' : ''}>
+                    <li key={t} className={e.org.includes('WorldQuant') ? 'is-quant' : ''}>
                       {t}
                     </li>
                   ))}

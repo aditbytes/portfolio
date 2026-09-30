@@ -116,7 +116,7 @@ export function PruningVisual() {
 
   return (
     <VisualFrame
-      file="prune_xai · fig.05"
+      file="prune_xai · fig.08"
       note="Schematic"
       label="A small neural network with input attribution bars; edges disappear as pruning sparsity increases"
       controls={

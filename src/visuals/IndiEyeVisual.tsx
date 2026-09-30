@@ -52,7 +52,7 @@ function PriceChart() {
 export function IndiEyeVisual() {
   return (
     <VisualFrame
-      file="indieye · market monitor · fig.03"
+      file="indieye · market monitor · fig.04"
       note="Interface concept · illustrative"
       className="vframe--wide"
       label="Dashboard concept: news, social and filings feed an NLP model; a sentiment gauge and price chart with sentiment bars lead to an insight line"

@@ -31,7 +31,7 @@ export function Contact() {
     <section className="section contact" id="contact" aria-labelledby="contact-title">
       <div className="container">
         <Reveal className="section-head__meta label">
-          <span className="section-head__index">[09]</span>
+          <span className="section-head__index">[10]</span>
           <span>Contact</span>
         </Reveal>
 

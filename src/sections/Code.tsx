@@ -28,11 +28,11 @@ export function Code() {
     <section className="section code" id="code" aria-labelledby="code-title">
       <div className="container">
         <SectionHead
-          index="08"
+          index="09"
           label="Open Source / Code"
           id="code-title"
           title={['Read the', <span className="outline" key="c">source</span>]}
-          lede="The public half of the work lives on GitHub. Some projects — like the regime framework and IndiEye’s core — are private for now."
+          lede="The public half of the work lives on GitHub. Some projects — INDRA (a team repository), the regime framework and IndiEye’s core — are private for now."
         />
 
         <div ref={ref}>

@@ -10,7 +10,7 @@ export function Research() {
     <section className="section research" id="research" aria-labelledby="research-title">
       <div className="container">
         <SectionHead
-          index="05"
+          index="06"
           label="Research / Thinking"
           id="research-title"
           title={['Beyond', <span className="outline" key="s">shipping.</span>]}

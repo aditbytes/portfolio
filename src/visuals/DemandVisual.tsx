@@ -49,7 +49,7 @@ export function DemandVisual() {
   }, []);
 
   return (
-    <VisualFrame file="demandiq · fig.02" label="Pipeline from data to alert above a chart of weekly sales, a forecast with a confidence band, and inventory falling below safety stock to trigger a high-risk alert">
+    <VisualFrame file="demandiq · fig.03" label="Pipeline from data to alert above a chart of weekly sales, a forecast with a confidence band, and inventory falling below safety stock to trigger a high-risk alert">
       {(inView) => (
         <svg className={`demand ${inView ? 'is-drawn' : ''}`} viewBox="0 0 640 360">
           {/* pipeline */}
