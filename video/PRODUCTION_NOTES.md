@@ -1,6 +1,9 @@
 # Portfolio Reel: Production Notes
 
-**Final cut:** `aditya_portfolio_reel_1080p.mp4` · 2:30 · 1920×1080 · 30 fps · H.264 + AAC 320 kbps · −15 LUFS
+**Final cut:** 2:30 · 1920×1080 · 30 fps · H.264 + AAC · −15 LUFS
+
+- `aditya_portfolio_reel_1080p.mp4`: master, CRF 18 (~3.2 Mbps), AAC 320 kbps, 60 MB. Upload this to YouTube.
+- `aditya_portfolio_reel_1080p_share.mp4`: two-pass ~1.15 Mbps, AAC 160 kbps, 25 MB. For LinkedIn, email or the site.
 
 A personal-brand showreel built only from real material: screen captures of the portfolio (this repository, built locally), the DemandIQ Streamlit dashboard running locally from its public repo, real code from public repos, and facts from the October 2026 resume and the portfolio content files.
 
